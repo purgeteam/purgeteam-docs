@@ -35,6 +35,12 @@ module.exports = {
                 text: '指南', link: '/zh/guide/unified-dispose-springboot-starter/'
             },
             {
+                text: '配置', link: '/zh/disposition/'
+            },
+            {
+                text: '版本规划', link: '/zh/roadmap/'
+            },
+            {
                 text: '生态',
                 items: [
                     {
