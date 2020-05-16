@@ -58,7 +58,7 @@ module.exports = {
                     },
                 ]
             },
-            {text: '个人博客', link: 'https://github.com/purgeyao.github.io'}
+            {text: '个人博客', link: 'https://purgeyao.github.io'}
         ],
         sidebar: [
             ['/zh/', '首页'],
