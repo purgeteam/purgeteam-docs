@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/purgeteam-docs/',
+    base: '/',
     title: 'PurgeTeam',
     description: 'PurgeTeam blog docs',
     themeConfig: {
