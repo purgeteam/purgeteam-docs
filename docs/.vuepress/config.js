@@ -2,7 +2,9 @@ module.exports = {
     base: '/',
     title: 'PurgeTeam',
     description: 'PurgeTeam blog docs',
-    head: [["link", {rel: "icon", href: `/favicon.ico`}]],
+    head: [
+        ["link", {rel: "icon", href: `/favicon.ico`}]
+    ],
     markdown: {
         externalLinks: {
             target: '_blank', rel: 'noopener noreferrer'
@@ -14,7 +16,7 @@ module.exports = {
         '/': {
             lang: '简体中文',
             title: 'PurgeTeam',
-            description: '中文'
+            description: '简体中文'
         },
         '/en/': {
             lang: 'English', // 将会被设置为 <html> 的 lang 属性
@@ -27,6 +29,11 @@ module.exports = {
         repo: 'https://github.com/purgeteam/',
         // 自定义仓库链接文字。
         repoLabel: 'PurgeTeam GitHub',
+        docsRepo: 'purgeteam/purgeteam-docs',
+        docsDir: 'docs',
+        docsBranch: 'master',
+        editLinks: true,
+        editLinkText: '帮助我们改善此文档！',
         nav: [
             {
                 text: '首页', link: '/'
