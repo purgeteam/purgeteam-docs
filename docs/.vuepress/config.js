@@ -11,12 +11,12 @@ module.exports = {
     locales: {
         // 键名是该语言所属的子路径
         // 作为特例，默认语言可以使用 '/' 作为其路径。
-        '/zh/': {
+        '/': {
             lang: '简体中文',
             title: 'PurgeTeam',
             description: '中文'
         },
-        '/': {
+        '/en/': {
             lang: 'English', // 将会被设置为 <html> 的 lang 属性
             title: 'PurgeTeam',
             description: '英文'
@@ -29,16 +29,16 @@ module.exports = {
         repoLabel: 'PurgeTeam GitHub',
         nav: [
             {
-                text: '首页', link: '/zh/'
+                text: '首页', link: '/'
             },
             {
-                text: '指南', link: '/zh/guide/unified-dispose-springboot-starter/'
+                text: '指南', link: '/guide/unified-dispose-springboot-starter/'
             },
             {
-                text: '配置', link: '/zh/disposition/'
+                text: '配置', link: '/disposition/'
             },
             {
-                text: '版本规划', link: '/zh/roadmap/'
+                text: '版本规划', link: '/roadmap/'
             },
             {
                 text: '生态',
@@ -67,13 +67,13 @@ module.exports = {
             {text: '个人博客', link: 'https://purgeyao.github.io'}
         ],
         sidebar: [
-            ['/zh/', '首页'],
-            ['/zh/guide/unified-dispose-springboot-starter/', '全局处理'],
-            ['/zh/guide/swagger-spring-boot/', 'Swagger集成'],
-            ['/zh/guide/elastic-job-spring-boot/', 'ElasticJob Plus'],
-            ['/zh/guide/dynamic-config-spring-boot/', '动态配置监听'],
-            ['/zh/guide/data-source-spring-boot/', 'Mysql多数据源'],
-            ['/zh/guide/log-trace-spring-boot/', '日志链路追踪']
+            ['/', '首页'],
+            ['/guide/unified-dispose-springboot-starter/', '全局处理'],
+            ['/guide/swagger-spring-boot/', 'Swagger集成'],
+            ['/guide/elastic-job-spring-boot/', 'ElasticJob Plus'],
+            ['/guide/dynamic-config-spring-boot/', '动态配置监听'],
+            ['/guide/data-source-spring-boot/', 'Mysql多数据源'],
+            ['/guide/log-trace-spring-boot/', '日志链路追踪']
         ]
     }
 }
