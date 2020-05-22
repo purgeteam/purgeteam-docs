@@ -34,12 +34,14 @@ module.exports = {
         docsBranch: 'master',
         editLinks: true,
         editLinkText: '帮助我们改善此文档！',
+        sidebarDepth: 2,
+        // displayAllHeaders: true,
         nav: [
             {
                 text: '首页', link: '/'
             },
             {
-                text: '指南', link: '/guide/unified-dispose-springboot-starter/'
+                text: '🚀全家桶New🔥', link: '/buckets/',
             },
             {
                 text: '配置', link: '/disposition/'
@@ -48,7 +50,31 @@ module.exports = {
                 text: '版本规划', link: '/roadmap/'
             },
             {
-                text: '生态',
+                text: '旧版本指南',
+                items: [
+                    {
+                        text: "全局处理(异常+返回)",
+                        link: "/guide/old/unified-dispose-springboot-starter/"
+                    }, {
+                        text: "swagger集成",
+                        link: "/guide/old/swagger-spring-boot/"
+                    }, {
+                        text: "ElasticJob Starter",
+                        link: "/guide/old/elastic-job-spring-boot/"
+                    }, {
+                        text: "动态配置监听",
+                        link: "/guide/old/dynamic-config-spring-boot/"
+                    }, {
+                        text: "Mysql多数据源",
+                        link: "/guide/old/data-source-spring-boot/"
+                    }, {
+                        text: "日志链路追踪",
+                        link: "/guide/old/log-trace-spring-boot/"
+                    },
+                ],
+            },
+            {
+                text: '旧版本生态',
                 items: [
                     {
                         text: "全局处理(异常+返回)",
@@ -73,14 +99,19 @@ module.exports = {
             },
             {text: '个人博客', link: 'https://purgeyao.github.io'}
         ],
-        sidebar: [
-            ['/', '首页'],
-            ['/guide/unified-dispose-springboot-starter/', '全局处理'],
-            ['/guide/swagger-spring-boot/', 'Swagger集成'],
-            ['/guide/elastic-job-spring-boot/', 'ElasticJob Plus'],
-            ['/guide/dynamic-config-spring-boot/', '动态配置监听'],
-            ['/guide/data-source-spring-boot/', 'Mysql多数据源'],
-            ['/guide/log-trace-spring-boot/', '日志链路追踪']
-        ]
+        sidebar: {
+            '/buckets/': [
+                ['/buckets/', '快速开始🔜'],
+                ['/buckets/unified-dispose-spring-cloud-starter/', '全局处理'],
+            ],
+            '/guide/old/': [
+                ['/guide/old/unified-dispose-springboot-starter/', '全局处理'],
+                ['/guide/old/swagger-spring-boot/', 'Swagger集成'],
+                ['/guide/old/elastic-job-spring-boot/', 'ElasticJob Plus'],
+                ['/guide/old/dynamic-config-spring-boot/', '动态配置监听'],
+                ['/guide/old/data-source-spring-boot/', 'Mysql多数据源'],
+                ['/guide/old/log-trace-spring-boot/', '日志链路追踪']
+            ]
+        }
     }
 }

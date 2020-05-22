@@ -4,7 +4,7 @@ heroImage: /img/timg.jpeg
 heroText: Purge Team
 tagline: To develop efficiency
 actionText: Quick learning →
-actionLink: /zh/guide/
+actionLink: /en/buckets/
 features:
 - title: Efficiency is the highest
   details: Simple configuration can save a lot of time by quickly completing common requirements, global exception encapsulation, log tracking, elastic-job encapsulation, etc.

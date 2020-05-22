@@ -4,7 +4,7 @@ heroImage: /img/timg.jpeg
 heroText: Purge Team
 tagline: 为开发效率而生
 actionText: 快速上手 →
-actionLink: /guide/unified-dispose-springboot-starter/
+actionLink: /buckets/
 features:
 - title: 效率至上
   details: 以简单配置，快速完成常见需求，全局异常统一封装，日志跟踪，elastic-job封装等，简单配置从而节省大量时间。
