@@ -261,7 +261,7 @@ public Boolean testBoolean() throws Exception {
 
 项目里很多重复的code，我们可以通过一定的方式去简化，以达到一定目的减少开发量。PurgeTeam 具有一些优秀的开源组件，减少日常的开发量。
 
-> 示例代码地址:[unified-dispose-spring-cloud-starter](https://github.com/purgeteam/spirng-cloud-purgeteam/)
+> 示例代码地址:[unified-dispose-spring-cloud-starter](https://github.com/purgeteam/spirng-cloud-purgeteam/tree/master/spring-cloud-purgeteam-examples/unified-dispose-spring-cloud-starter-examples)
 
 > 作者GitHub:
 [Purgeyao](https://github.com/purgeyao) 欢迎关注
