@@ -12,5 +12,5 @@ features:
   details: 丝滑般整合springboot，不改变原有框架基础上增加功能的丰富性。
 - title: 丰富功能
   details: 全局处理(异常+统一)，ElasticJob Starter，swagger集成，动态配置监听，Mysql多数据源，微服务日志链路追踪一应俱全。
-footer: Apache License 2.0 | © 2020 purgeteam
+footer: <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备20022308号-1</a> | Apache License 2.0 | © 2020 purgeteam
 ---
