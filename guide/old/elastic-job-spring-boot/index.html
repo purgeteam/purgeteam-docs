@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="简体中文">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>elastic-job-spring-boot | PurgeTeam</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="简体中文">
+    <link rel="preload" href="/assets/css/0.styles.298a343f.css" as="style"><link rel="preload" href="/assets/js/app.8d7c9d3d.js" as="script"><link rel="preload" href="/assets/js/2.1de14bcc.js" as="script"><link rel="preload" href="/assets/js/13.6e007452.js" as="script"><link rel="prefetch" href="/assets/js/10.11358709.js"><link rel="prefetch" href="/assets/js/11.b5313f69.js"><link rel="prefetch" href="/assets/js/12.61f0cd74.js"><link rel="prefetch" href="/assets/js/14.a54043a4.js"><link rel="prefetch" href="/assets/js/15.0cc6043f.js"><link rel="prefetch" href="/assets/js/16.d2974e83.js"><link rel="prefetch" href="/assets/js/17.e959bdde.js"><link rel="prefetch" href="/assets/js/3.b942c716.js"><link rel="prefetch" href="/assets/js/4.1ca227ac.js"><link rel="prefetch" href="/assets/js/5.f801f24f.js"><link rel="prefetch" href="/assets/js/6.57a493c9.js"><link rel="prefetch" href="/assets/js/7.5ab16c32.js"><link rel="prefetch" href="/assets/js/8.dae1bbef.js"><link rel="prefetch" href="/assets/js/9.cf3e6b51.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.298a343f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PurgeTeam</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/guide/old/unified-dispose-springboot-starter/" class="sidebar-link">全局处理</a></li><li><a href="/guide/old/swagger-spring-boot/" class="sidebar-link">Swagger集成</a></li><li><a href="/guide/old/elastic-job-spring-boot/" class="active sidebar-link">ElasticJob Plus</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_1-简介" class="sidebar-link">1 简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_1-1-使用场景" class="sidebar-link">1.1 使用场景</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_1-2-功能列表" class="sidebar-link">1.2 功能列表</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_1-3-概念" class="sidebar-link">1.3 概念</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_1-4-封装elasticjob" class="sidebar-link">1.4 封装elasticjob</a></li></ul></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_2-使用说明" class="sidebar-link">2.使用说明:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_2-1-添加依赖" class="sidebar-link">2.1 添加依赖</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_2-2-配置" class="sidebar-link">2.2 配置</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_2-3-定时器实现方法编写" class="sidebar-link">2.3 定时器实现方法编写</a></li><li class="sidebar-sub-header"><a href="/guide/old/elastic-job-spring-boot/#_2-4-配置定时器" class="sidebar-link">2.4 配置定时器</a></li></ul></li></ul></li><li><a href="/guide/old/dynamic-config-spring-boot/" class="sidebar-link">动态配置监听</a></li><li><a href="/guide/old/data-source-spring-boot/" class="sidebar-link">Mysql多数据源</a></li><li><a href="/guide/old/log-trace-spring-boot/" class="sidebar-link">日志链路追踪</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="elastic-job-spring-boot"><a href="#elastic-job-spring-boot" class="header-anchor">#</a> elastic-job-spring-boot</h1> <p><a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:elasticjob-spring-boot-starter" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/maven-central/v/com.purgeteam/elasticjob-spring-boot-starter.svg?label=Maven%20Central" alt="Maven Central"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <img src="https://img.shields.io/badge/SpringBoot-2.1.5RELEASE-green.svg" alt="License"> <img src="https://img.shields.io/badge/JAVA-1.8+-green.svg" alt="License"> <img src="https://img.shields.io/badge/maven-3.0+-green.svg" alt="License"> <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg" alt="License"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><strong>qq交流群:</strong><code>812321371</code></p> <h2 id="_1-简介"><a href="#_1-简介" class="header-anchor">#</a> 1 简介</h2> <p><code>Elastic-Job</code>是一个分布式调度解决方案，由两个相互独立的子项目<code>Elastic-Job-Lite</code>和<code>Elastic-Job-Cloud</code>组成。<code>Elastic-Job-Lite</code>定位为轻量级无中心化解决方案，使用jar包的形式提供分布式任务的协调服务。
+基于<code>quartz</code>定时任务框架为基础的，因此具备<code>quartz</code>的大部分功能
+使用<code>zookeeper</code>做协调，调度中心，更加轻量级
+支持任务的分片
+支持弹性扩容,可以水平扩展, 当任务再次运行时，会检查当前的服务器数量，重新分片，分片结束之后才会继续执行任务
+失效转移，容错处理，当一台调度服务器宕机或者跟<code>zookeeper</code>断开连接之后，会立即停止作业，然后再去寻找其他空闲的调度服务器，来运行剩余的任务
+提供运维界面，可以管理作业和注册中心。</p> <h3 id="_1-1-使用场景"><a href="#_1-1-使用场景" class="header-anchor">#</a> 1.1 使用场景</h3> <p>由于项目为微服务，单模块可能在两个实例以上的数量，定时器就会出现多实例同时执行的情况。
+一般定时器缺少管理界面，无法监控定时器是否执行成功。
+市面上常见的解决方案为定时器加锁的操作，或者采用第3方分布式定时器。
+分布式定时器有多种方案，比如阿里内部的<code>ScheduledX</code>，当当网的<code>Elastic job</code>，个人开源的<code>xxl-job</code>等。</p> <h3 id="_1-2-功能列表"><a href="#_1-2-功能列表" class="header-anchor">#</a> 1.2 功能列表</h3> <ul><li>分布式调度协调</li> <li>弹性扩容缩容</li> <li>失效转移</li> <li>错过执行作业重触发</li> <li>作业分片一致性，保证同一分片在分布式环境中仅一个执行实例</li> <li>自诊断并修复分布式不稳定造成的问题</li> <li>支持并行调度</li> <li>支持作业生命周期操作</li> <li>丰富的作业类型</li> <li>Spring整合以及命名空间提供</li> <li>运维平台</li></ul> <h3 id="_1-3-概念"><a href="#_1-3-概念" class="header-anchor">#</a> 1.3 概念</h3> <p>分片：任务的分布式执行，需要将一个任务拆分为多个独立的任务项，然后由分布式的服务器分别执行某一个或几个分片项。
+例如：有一个遍历数据库某张表的作业，现有2台服务器。为了快速的执行作业，那么每台服务器应执行作业的<code>50%</code>。 为满足此需求，可将作业分成2片，每台服务器执行1片。作业遍历数据的逻辑应为：服务器A遍历ID以奇数结尾的数据；服务器B遍历ID以偶数结尾的数据。 如果分成10片，则作业遍历数据的逻辑应为：每片分到的分片项应为ID%10，而服务器A被分配到分片项<code>0,1,2,3,4</code>；服务器B被分配到分片项<code>5,6,7,8,9</code>，直接的结果就是服务器A遍历<code>ID</code>以<code>0-4</code>结尾的数据；服务器B遍历<code>ID</code>以<code>5-9</code>结尾的数据。</p> <p>历史轨迹：<code>Elastic-Job</code>提供了事件追踪功能，可通过事件订阅的方式处理调度过程的重要事件，用于查询、统计和监控。</p> <h3 id="_1-4-封装elasticjob"><a href="#_1-4-封装elasticjob" class="header-anchor">#</a> 1.4 封装<code>elasticjob</code></h3> <p>由于当当网<code>Elastic job</code>处于1年间未更新阶段，相关jar处于可以使用阶段功能不全。考虑到使用场景为多项目使用，将<code>elastic-job-lite-spring</code>简单封装便于使用。</p> <h2 id="_2-使用说明"><a href="#_2-使用说明" class="header-anchor">#</a> 2.使用说明:</h2> <h3 id="_2-1-添加依赖"><a href="#_2-1-添加依赖" class="header-anchor">#</a> 2.1 添加依赖</h3> <p>ps:<code>实际version版本请使用最新版</code></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.purgeteam&lt;/groupId&gt;
+  &lt;artifactId&gt;elasticjob-spring-boot-starter&lt;/artifactId&gt;
+  &lt;version&gt;0.1.1.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div><h3 id="_2-2-配置"><a href="#_2-2-配置" class="header-anchor">#</a> 2.2 配置</h3> <p>ps: 需要<code>mysql</code>,<code>zookeeper</code>支持，请提前搭建好。</p> <p>配置<code>bootstrap.yml</code>或者<code>application.yml</code>。</p> <p>加入以下配置：</p> <div class="language- extra-class"><pre class="language-text"><code>spring:
+  elasticjob:
+    datasource: # job需要的记录数据源
+      url: jdbc:mysql://127.0.0.1:3306/batch_log?useUnicode=true&amp;characterEncoding=utf-8&amp;verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Rtqw123OpnmER
+    regCenter: # 注册中心
+      serverList: 127.0.0.1:2181
+      namespace: elasticJobDemo
+</code></pre></div><h3 id="_2-3-定时器实现方法编写"><a href="#_2-3-定时器实现方法编写" class="header-anchor">#</a> 2.3 定时器实现方法编写</h3> <p>创建定时器类（唯一不同的地方在于将<code>@Scheduled</code>改为实现<code>SimpleJob</code>接口即可）
+定时器实现方法编写在<code>execute</code>方法里。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MySimpleJob</span> <span class="token keyword">implements</span> <span class="token class-name">SimpleJob</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//  @Scheduled(cron = &quot;0 0/1 * * * ?&quot;)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">ShardingContext</span> shardingContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;Thread ID: %s, 作业分片总数: %s, &quot;</span> <span class="token operator">+</span>
+                        <span class="token string">&quot;当前分片项: %s.当前参数: %s,&quot;</span> <span class="token operator">+</span>
+                        <span class="token string">&quot;作业名称: %s.作业自定义参数: %s&quot;</span><span class="token punctuation">,</span>
+                <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingTotalCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingParameter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getJobName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getJobParameter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 分片大致如下：根据配置的分片参数执行相应的逻辑</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">getShardingItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span> 
+                <span class="token comment">// do something by sharding item 0</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> 
+                <span class="token comment">// do something by sharding item 1</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> 
+                <span class="token comment">// do something by sharding item 2</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token comment">// case n: ...</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>log：Thread ID: 66, 作业分片总数: 1, 当前分片项: 0.当前参数: Beijing,作业名称: PropertiesSimpleJob.作业自定义参数: test
+</code></pre></div><h3 id="_2-4-配置定时器"><a href="#_2-4-配置定时器" class="header-anchor">#</a> 2.4 配置定时器</h3> <h4 id="_2-4-1-创建configuration类"><a href="#_2-4-1-创建configuration类" class="header-anchor">#</a> 2.4.1 创建Configuration类</h4> <p>将<code>ZookeeperRegistryCenter</code>和<code>JobEventConfiguration</code>注入。
+创建<code>JobScheduler</code> <code>@Bean(initMethod = &quot;init&quot;)</code>。
+在<code>mySimpleJobScheduler</code>方法里先通过<code>ElasticJobUtils#getLiteJobConfiguration</code>获取<code>LiteJobConfiguration</code>对象。
+创建<code>SpringJobScheduler</code>对象返回即可。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyJobConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// job 名称</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> JOB_NAME <span class="token operator">=</span> <span class="token string">&quot;MySimpleJob&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 定时器cron参数</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> CRON <span class="token operator">=</span> <span class="token string">&quot;0 0/1 * * * ?&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 定时器分片</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> SHARDING_TOTAL_COUNT <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 分片参数</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> SHARDING_ITEM_PARAMETERS <span class="token operator">=</span> <span class="token string">&quot;0=Beijing,1=Shanghai,2=Guangzhou&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 自定义参数</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> JOB_PARAMETERS <span class="token operator">=</span> <span class="token string">&quot;parameter&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">ZookeeperRegistryCenter</span> regCenter<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">JobEventConfiguration</span> jobEventConfiguration<span class="token punctuation">;</span>
+
+
+    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>initMethod <span class="token operator">=</span> <span class="token string">&quot;init&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">JobScheduler</span> <span class="token function">mySimpleJobScheduler</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">MySimpleJob</span> mySimpleJob<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">LiteJobConfiguration</span> liteJobConfiguration <span class="token operator">=</span> <span class="token class-name">ElasticJobUtils</span>
+                <span class="token punctuation">.</span><span class="token function">getLiteJobConfiguration</span><span class="token punctuation">(</span>mySimpleJob<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> JOB_NAME<span class="token punctuation">,</span> CRON<span class="token punctuation">,</span>
+                        SHARDING_TOTAL_COUNT<span class="token punctuation">,</span> SHARDING_ITEM_PARAMETERS<span class="token punctuation">,</span> JOB_PARAMETERS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 参数：1.定时器实例，2.注册中心类，3.LiteJobConfiguration，</span>
+        <span class="token comment">//     3.历史轨迹（不需要可以省略）</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SpringJobScheduler</span><span class="token punctuation">(</span>mySimpleJob<span class="token punctuation">,</span> regCenter<span class="token punctuation">,</span> liteJobConfiguration<span class="token punctuation">,</span> jobEventConfiguration<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>ElasticJobUtils#getLiteJobConfiguration</code>参数简介：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+     * 获取 {@link LiteJobConfiguration} 对象
+     *
+     * @param jobClass               定时器实现类
+     * @param jobName                定时器名称
+     * @param cron                   定时参数
+     * @param shardingTotalCount     作业分片总数
+     * @param shardingItemParameters 当前参数 可以为null
+     * @param jobParameters          作业自定义参数 可以为null
+     * @return {@link LiteJobConfiguration}
+     */</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">LiteJobConfiguration</span> <span class="token function">getLiteJobConfiguration</span><span class="token punctuation">(</span>
+      <span class="token keyword">final</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">SimpleJob</span><span class="token punctuation">&gt;</span></span> jobClass<span class="token punctuation">,</span>
+      <span class="token keyword">final</span> <span class="token class-name">String</span> jobName<span class="token punctuation">,</span>
+      <span class="token keyword">final</span> <span class="token class-name">String</span> cron<span class="token punctuation">,</span>
+      <span class="token keyword">final</span> <span class="token keyword">int</span> shardingTotalCount<span class="token punctuation">,</span>
+      <span class="token keyword">final</span> <span class="token class-name">String</span> shardingItemParameters<span class="token punctuation">,</span>
+      <span class="token keyword">final</span> <span class="token class-name">String</span> jobParameters<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h4 id="_2-4-2-简化configuration类"><a href="#_2-4-2-简化configuration类" class="header-anchor">#</a> 2.4.2 简化Configuration类</h4> <p>当然也可以用下面的<code>@Configuration</code>实现简化,配置<code>bootstrap.yml</code>或者<code>application.yml</code>。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">elasticjob</span><span class="token punctuation">:</span>
+    <span class="token key atrule">scheduled</span><span class="token punctuation">:</span>
+      <span class="token key atrule">jobConfigMap</span><span class="token punctuation">:</span> // 为map集合
+        <span class="token key atrule">PropertiesSimpleJob</span><span class="token punctuation">:</span> // 定时器key名称
+          <span class="token key atrule">jobName</span><span class="token punctuation">:</span> PropertiesSimpleJob // job名称
+          <span class="token key atrule">cron</span><span class="token punctuation">:</span> 0 0/1 * * * <span class="token punctuation">?</span> // cron表达式
+          <span class="token key atrule">shardingTotalCount</span><span class="token punctuation">:</span> 2 // 分片数量
+          <span class="token key atrule">shardingItemParameters</span><span class="token punctuation">:</span> 0=123<span class="token punctuation">,</span>1=332 // 分片参数
+          <span class="token key atrule">jobParameters</span><span class="token punctuation">:</span> test // 自定义参数
+</code></pre></div><p>注入<code>SpringJobSchedulerFactory</code>，在<code>propertiesSimpleJobScheduler</code>方法里调用<code>gerSpringJobScheduler</code>方法即可。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PropertiesSimpleJobConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">SpringJobSchedulerFactory</span> springJobSchedulerFactory<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>initMethod <span class="token operator">=</span> <span class="token string">&quot;init&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">JobScheduler</span> <span class="token function">propertiesSimpleJobScheduler</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">PropertiesSimpleJob</span> job<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 参数：1.定时器实例，2.配置名称，3.是否开启历史轨迹</span>
+        <span class="token keyword">return</span> springJobSchedulerFactory<span class="token punctuation">.</span><span class="token function">getSpringJobScheduler</span><span class="token punctuation">(</span>job<span class="token punctuation">,</span><span class="token string">&quot;PropertiesSimpleJob&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_2-4-3-注解方式配置-推荐方式"><a href="#_2-4-3-注解方式配置-推荐方式" class="header-anchor">#</a> 2.4.3 注解方式配置(推荐方式)</h4> <p>ps:这个注解包含了上述方式，简化定时器注入。</p> <p>继承<code>SimpleJob</code>实现方法<code>execute</code>。</p> <p>在<code>AnnotationSimpleJob</code>类上加入注解<code>@ElasticJobScheduler</code>即可。
+下面为完整注解。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@ElasticJobScheduler</span><span class="token punctuation">(</span>
+        name <span class="token operator">=</span> <span class="token string">&quot;AnnotationSimpleJob&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 定时器名称</span>
+        cron <span class="token operator">=</span> <span class="token string">&quot;0/8 * * * * ?&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 定时器表达式</span>
+    	shardingTotalCount <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 作业分片总数 默认为1</span>
+        shardingItemParameters <span class="token operator">=</span> <span class="token string">&quot;0=Beijing,1=Shanghai,2=Guangzhou&quot;</span><span class="token punctuation">,</span>  <span class="token comment">// 分片序列号和参数用等号分隔 不需要参数可以不加</span>
+        jobParameters <span class="token operator">=</span> <span class="token string">&quot;123&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 作业自定义参数 不需要参数可以不加</span>
+    	isEvent <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">// 是否开启数据记录 默认为true</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationSimpleJob</span> <span class="token keyword">implements</span> <span class="token class-name">SimpleJob</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">ShardingContext</span> shardingContext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;Thread ID: %s, 作业分片总数: %s, &quot;</span> <span class="token operator">+</span>
+                        <span class="token string">&quot;当前分片项: %s.当前参数: %s,&quot;</span> <span class="token operator">+</span>
+                        <span class="token string">&quot;作业名称: %s.作业自定义参数: %s&quot;</span><span class="token punctuation">,</span>
+                <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingTotalCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getShardingParameter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getJobName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                shardingContext<span class="token punctuation">.</span><span class="token function">getJobParameter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/purgeteam/purgeteam-docs/edit/master/docs/guide/old/elastic-job-spring-boot/README.md" target="_blank" rel="noopener noreferrer">帮助我们改善此文档！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/old/swagger-spring-boot/" class="prev">
+        Swagger集成
+      </a></span> <span class="next"><a href="/guide/old/dynamic-config-spring-boot/">
+        动态配置监听
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d7c9d3d.js" defer></script><script src="/assets/js/2.1de14bcc.js" defer></script><script src="/assets/js/13.6e007452.js" defer></script>
+  </body>
+</html>

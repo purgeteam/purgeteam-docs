@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="简体中文">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dynamic-config-spring-boot SpringCloud-动态配置变化监控-获取变化(支持Config、Nacos) | PurgeTeam</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="简体中文">
+    <link rel="preload" href="/assets/css/0.styles.298a343f.css" as="style"><link rel="preload" href="/assets/js/app.8d7c9d3d.js" as="script"><link rel="preload" href="/assets/js/2.1de14bcc.js" as="script"><link rel="preload" href="/assets/js/12.61f0cd74.js" as="script"><link rel="prefetch" href="/assets/js/10.11358709.js"><link rel="prefetch" href="/assets/js/11.b5313f69.js"><link rel="prefetch" href="/assets/js/13.6e007452.js"><link rel="prefetch" href="/assets/js/14.a54043a4.js"><link rel="prefetch" href="/assets/js/15.0cc6043f.js"><link rel="prefetch" href="/assets/js/16.d2974e83.js"><link rel="prefetch" href="/assets/js/17.e959bdde.js"><link rel="prefetch" href="/assets/js/3.b942c716.js"><link rel="prefetch" href="/assets/js/4.1ca227ac.js"><link rel="prefetch" href="/assets/js/5.f801f24f.js"><link rel="prefetch" href="/assets/js/6.57a493c9.js"><link rel="prefetch" href="/assets/js/7.5ab16c32.js"><link rel="prefetch" href="/assets/js/8.dae1bbef.js"><link rel="prefetch" href="/assets/js/9.cf3e6b51.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.298a343f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PurgeTeam</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/guide/old/unified-dispose-springboot-starter/" class="sidebar-link">全局处理</a></li><li><a href="/guide/old/swagger-spring-boot/" class="sidebar-link">Swagger集成</a></li><li><a href="/guide/old/elastic-job-spring-boot/" class="sidebar-link">ElasticJob Plus</a></li><li><a href="/guide/old/dynamic-config-spring-boot/" class="active sidebar-link">动态配置监听</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#功能使用" class="sidebar-link">功能使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#添加依赖" class="sidebar-link">添加依赖</a></li><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#enabledynamicconfigevent" class="sidebar-link">@EnableDynamicConfigEvent</a></li><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#编写事件接收器" class="sidebar-link">编写事件接收器</a></li><li class="sidebar-sub-header"><a href="/guide/old/dynamic-config-spring-boot/#更新配置演示" class="sidebar-link">更新配置演示</a></li></ul></li></ul></li><li><a href="/guide/old/data-source-spring-boot/" class="sidebar-link">Mysql多数据源</a></li><li><a href="/guide/old/log-trace-spring-boot/" class="sidebar-link">日志链路追踪</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dynamic-config-spring-boot-springcloud-动态配置变化监控-获取变化-支持config、nacos"><a href="#dynamic-config-spring-boot-springcloud-动态配置变化监控-获取变化-支持config、nacos" class="header-anchor">#</a> dynamic-config-spring-boot SpringCloud-动态配置变化监控-获取变化(支持Config、Nacos)</h1> <p><a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:dynamic-config-spring-boot-starter" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/maven-central/v/com.purgeteam/dynamic-config-spring-boot-starter.svg?label=Maven%20Central" alt="Maven Central"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <img src="https://img.shields.io/badge/SpringBoot-2.1.8RELEASE-green.svg" alt="License"> <img src="https://img.shields.io/badge/JAVA-1.8+-green.svg" alt="License"> <img src="https://img.shields.io/badge/maven-3.0+-green.svg" alt="License"> <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg" alt="License"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <blockquote><p>qq交流群: <code>812321371</code>
+微信交流群: <code>MercyYao</code></p></blockquote> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>配置中心有原生的 <code>SpringCloud Config</code> 、国内开源的 阿里 <code>Nacos</code>、携程 <code>Apollo</code> 等。
+都是配置热加载的基础上增加了其他的功能。</p> <p>配置中心具有配置热加载，修改配置 -&gt; 推送到程序 -&gt; 执行配置更新。</p> <p>而获取配置更新的具体内容，这些组件都没有做到(<code>SpringCloud Config</code>、<code>Nacos</code>, <code>Apollo待验证</code> )。如:获取变化的配置 <code>test</code> 更新前为 <code>123</code> ,更新后为 <code>111</code>。</p> <p><code>SpringCloud Config</code> 、<code>Nacos</code> 、 <code>Apollo待验证</code> 配置更新都是将整个配置文件推送给服务进行配置对比结果进行更新。这个阶段用户无法从程序中获取更新的内容。</p> <p>为了实现这个扩展功能点,更新结果可以让程序感知。
+在这个阶段用户通过code可以实现配置监听, 监听到某个配置变化做其他操作等。</p> <p>示例: 获取到推送配置变化, 感知到 <code>test</code> 发生变化, 做更新同步数据操作等等。</p> <p><strong>感知结果集如:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>{
+    `被更新的配置key`:{
+        before: `原来的值`，
+        after: `更新后的值`
+    },
+    `被更新的配置key`:{
+        before: `原来的值`，
+        after: `更新后的值`
+    }
+}
+</code></pre></div><h2 id="功能使用"><a href="#功能使用" class="header-anchor">#</a> 功能使用</h2> <h3 id="添加依赖"><a href="#添加依赖" class="header-anchor">#</a> 添加依赖</h3> <p><strong>ps:</strong> 实际version版本请使用最新版
+<strong>最新版本:</strong> <a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:dynamic-config-spring-boot-starter" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/maven-central/v/com.purgeteam/dynamic-config-spring-boot-starter.svg?label=Maven%20Central" alt="Maven Central"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.purgeteam&lt;/groupId&gt;
+  &lt;artifactId&gt;dynamic-config-spring-boot-starter&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div><p>当然实际情况要结合添加动态配置依赖包 <code>SpringCloud Config</code> 、 <code>Nacos</code> 、 <code>Apollo</code> 。</p> <p><code>dynamic-config-spring-boot-starter</code> 模块不包含以上依赖, 需要自行添加。</p> <h3 id="enabledynamicconfigevent"><a href="#enabledynamicconfigevent" class="header-anchor">#</a> @EnableDynamicConfigEvent</h3> <p><strong>简介:</strong> 开启这个特性注解，具备配置推送更新监听能力。</p> <p>启动类添加 <code>@EnableDynamicConfigEvent</code> 注解开启配置变化监听功能。</p> <div class="language- extra-class"><pre class="language-text"><code>@EnableDynamicConfigEvent
+@SpringBootApplication
+public class DynamicConfigSpringBootApplication {
+
+  public static void main(String[] args) {
+    SpringApplication.run(DynamicConfigSpringBootApplication.class, args);
+  }
+
+}
+</code></pre></div><h3 id="编写事件接收器"><a href="#编写事件接收器" class="header-anchor">#</a> 编写事件接收器</h3> <p>创建 <code>NacosListener</code>(名称随意)  实现 <code>ApplicationListener&lt;ActionConfigEvent&gt;#onApplicationEvent</code> 方法</p> <div class="language- extra-class"><pre class="language-text"><code>@Slf4j
+@Component
+public class NacosListener implements ApplicationListener&lt;ActionConfigEvent&gt; {
+
+  @Override
+  public void onApplicationEvent(ActionConfigEvent event) {
+    log.info(&quot;接收事件&quot;);
+    log.info(event.getPropertyMap().toString());
+  }
+}
+</code></pre></div><p>在 <code>NacosListener#onApplicationEvent</code> 方法里获取目标值, 作相应的逻辑处理。</p> <p><strong>ActionConfigEvent event:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>public class ActionConfigEvent extends ApplicationEvent {
+
+    // 事件说明
+    private String eventDesc;
+    
+    // 更新变化结果集
+    private Map&lt;String, HashMap&gt; propertyMap;
+    ...
+}
+</code></pre></div><p><code>ActionConfigEvent</code> 主要包含 <code>Map&lt;String, HashMap&gt; propertyMap;</code>, 从这里可以获取更新变化结果, propertyMap结构如下:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    `被更新的配置key`:{
+        before: `原来的值`，
+        after: `更新后的值`
+    },
+    `被更新的配置key`:{
+        before: `原来的值`，
+        after: `更新后的值`
+    }
+}
+</code></pre></div><h3 id="更新配置演示"><a href="#更新配置演示" class="header-anchor">#</a> 更新配置演示</h3> <p><strong>ps:</strong> 示例为 <code>Nacos</code> 其它配置中心无差别。</p> <p>原始配置:</p> <div class="language- extra-class"><pre class="language-text"><code>test.age=18
+user.name=purgeyao
+</code></pre></div><p>修改配置:</p> <div class="language- extra-class"><pre class="language-text"><code># test.age 将18更新为19
+test.age=19
+user.name=purgeyao
+</code></pre></div><p>在 <code>NacosListener#onApplicationEvent</code> 方法加入端点调试观察 <code>ActionConfigEvent</code> 对象参数。</p> <p><img src="https://raw.githubusercontent.com/purgeyao/purgeyao.github.io/master/img/blog/2019-10-17/config1.png" alt="img"></p> <p>更新的 <code>test.age</code> 已经被记录在了 <code>ActionConfigEvent.propertyMap</code> 里了, 从 18 更新为 19。</p> <p>控制台打印:</p> <div class="language- extra-class"><pre class="language-text"><code>2019-10-17 10:44:09.221  INFO 54054 --- [-10.1.1.97_8848] c.p.dynamic.config.demo.NacosListener    : 接收事件
+2019-10-17 10:45:19.752  INFO 54054 --- [-10.1.1.97_8848] c.p.dynamic.config.demo.NacosListener    : {test.age={before=18, after=19}}
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/purgeteam/purgeteam-docs/edit/master/docs/guide/old/dynamic-config-spring-boot/README.md" target="_blank" rel="noopener noreferrer">帮助我们改善此文档！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/old/elastic-job-spring-boot/" class="prev">
+        ElasticJob Plus
+      </a></span> <span class="next"><a href="/guide/old/data-source-spring-boot/">
+        Mysql多数据源
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d7c9d3d.js" defer></script><script src="/assets/js/2.1de14bcc.js" defer></script><script src="/assets/js/12.61f0cd74.js" defer></script>
+  </body>
+</html>

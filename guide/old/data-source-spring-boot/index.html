@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="简体中文">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot-Mysql模板多数据源加载 | PurgeTeam</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="简体中文">
+    <link rel="preload" href="/assets/css/0.styles.298a343f.css" as="style"><link rel="preload" href="/assets/js/app.8d7c9d3d.js" as="script"><link rel="preload" href="/assets/js/2.1de14bcc.js" as="script"><link rel="preload" href="/assets/js/11.b5313f69.js" as="script"><link rel="prefetch" href="/assets/js/10.11358709.js"><link rel="prefetch" href="/assets/js/12.61f0cd74.js"><link rel="prefetch" href="/assets/js/13.6e007452.js"><link rel="prefetch" href="/assets/js/14.a54043a4.js"><link rel="prefetch" href="/assets/js/15.0cc6043f.js"><link rel="prefetch" href="/assets/js/16.d2974e83.js"><link rel="prefetch" href="/assets/js/17.e959bdde.js"><link rel="prefetch" href="/assets/js/3.b942c716.js"><link rel="prefetch" href="/assets/js/4.1ca227ac.js"><link rel="prefetch" href="/assets/js/5.f801f24f.js"><link rel="prefetch" href="/assets/js/6.57a493c9.js"><link rel="prefetch" href="/assets/js/7.5ab16c32.js"><link rel="prefetch" href="/assets/js/8.dae1bbef.js"><link rel="prefetch" href="/assets/js/9.cf3e6b51.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.298a343f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PurgeTeam</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/buckets/" class="nav-link">
+  🚀全家桶New🔥
+</a></div><div class="nav-item"><a href="/disposition/" class="nav-link">
+  配置
+</a></div><div class="nav-item"><a href="/roadmap/" class="nav-link">
+  版本规划
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本指南" class="dropdown-title"><span class="title">旧版本指南</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/unified-dispose-springboot-starter/" class="nav-link">
+  全局处理(异常+返回)
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/swagger-spring-boot/" class="nav-link">
+  swagger集成
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/elastic-job-spring-boot/" class="nav-link">
+  ElasticJob Starter
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/dynamic-config-spring-boot/" class="nav-link">
+  动态配置监听
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  Mysql多数据源
+</a></li><li class="dropdown-item"><!----> <a href="/guide/old/log-trace-spring-boot/" class="nav-link">
+  日志链路追踪
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="旧版本生态" class="dropdown-title"><span class="title">旧版本生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/unified-dispose-springboot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  全局处理(异常+返回)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/swagger-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  swagger集成
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/elastic-job-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  ElasticJob Starter
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/dynamic-config-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态配置监听
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Mysql多数据源
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/purgeteam/log-trace-spring-boot" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  日志链路追踪
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://purgeyao.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/old/data-source-spring-boot/" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/purgeteam/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    PurgeTeam GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/guide/old/unified-dispose-springboot-starter/" class="sidebar-link">全局处理</a></li><li><a href="/guide/old/swagger-spring-boot/" class="sidebar-link">Swagger集成</a></li><li><a href="/guide/old/elastic-job-spring-boot/" class="sidebar-link">ElasticJob Plus</a></li><li><a href="/guide/old/dynamic-config-spring-boot/" class="sidebar-link">动态配置监听</a></li><li><a href="/guide/old/data-source-spring-boot/" class="active sidebar-link">Mysql多数据源</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#功能使用" class="sidebar-link">功能使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#添加依赖" class="sidebar-link">添加依赖</a></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#_1-配置模板" class="sidebar-link">1 配置模板</a></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#_2-数据库名结合模板配置" class="sidebar-link">2 数据库名结合模板配置</a></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#_2-数据库信息结合配置模板" class="sidebar-link">2 数据库信息结合配置模板</a></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#_4-注解选择器结合模板配置-推荐写法" class="sidebar-link">4 注解选择器结合模板配置(推荐写法)</a></li></ul></li><li class="sidebar-sub-header"><a href="/guide/old/data-source-spring-boot/#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/guide/old/log-trace-spring-boot/" class="sidebar-link">日志链路追踪</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="springboot-mysql模板多数据源加载"><a href="#springboot-mysql模板多数据源加载" class="header-anchor">#</a> SpringBoot-Mysql模板多数据源加载</h1> <p><a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:mysql-datasource-spring-boot-starter" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/maven-central/v/com.purgeteam/mysql-datasource-spring-boot-starter.svg?label=Maven%20Central" alt="Maven Central"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <img src="https://img.shields.io/badge/SpringBoot-2.1.8.RELEASE-green.svg" alt="License"> <img src="https://img.shields.io/badge/JAVA-1.8+-green.svg" alt="License"> <img src="https://img.shields.io/badge/maven-3.0+-green.svg" alt="License"> <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg" alt="License"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <blockquote><p>qq交流群: <code>812321371</code>
+微信交流群: <code>MercyYao</code></p></blockquote> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>在 java 项目里常用到 mysql 多数据源操作。结合 springboot 使用原有的还是很方便的。
+不过需要配置多套数据源的配置。</p> <p>在微服务里, 数据库连接之类的配置是单独拆开读取。相当于一个模板。</p> <p>如下mysql:</p> <div class="language- extra-class"><pre class="language-text"><code>spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/${config.mysql.name}?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;autoReconnect=true
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+</code></pre></div><p><code>redis</code> <code>rabbitmq</code> <code>mongodb</code> 等等中间件连接配置通过单独配置分开,以便后续方便修改ip等连接信息。</p> <p>当然 <code>springboot</code> 在注入多数据源时要读取相应前缀的数据配置。</p> <p><strong>代码:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>@Bean
+@ConfigurationProperties(prefix = &quot;spring.datasource.onemysql&quot;)
+public DataSource originalDataSource(DataSourceFactory dataSourceFactory) {
+    return DataSourceBuilder.create().build();
+}
+</code></pre></div><p><strong>配置:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>spring.datasource.onemysql.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.onemysql.url=jdbc:mysql://127.0.0.1:3306/${config.mysql.name}?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;autoReconnect=true
+spring.datasource.onemysql.username=root
+spring.datasource.onemysql.password=root
+spring.datasource.onemysql.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.onemysql.driverClassName=com.mysql.jdbc.Driver
+</code></pre></div><p>上面方式加载以 onemysql 开始的数据源配置。如果是多个的话，相应配置多个bean和配置文件。</p> <p>根据上述方式, 我们可以使用一个mysql模板, 通过一定方式去加载创建对应的数据源。微服务下只需要维护一个mysql配置模板。</p> <h2 id="功能使用"><a href="#功能使用" class="header-anchor">#</a> 功能使用</h2> <h3 id="添加依赖"><a href="#添加依赖" class="header-anchor">#</a> 添加依赖</h3> <p><strong>ps:</strong> 实际version版本请使用最新版
+<strong>最新版本:</strong> <a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:mysql-datasource-spring-boot-starter" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/maven-central/v/com.purgeteam/mysql-datasource-spring-boot-starter.svg?label=Maven%20Central" alt="Maven Central"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://search.maven.org/search?q=g:com.purgeteam%20AND%20a:mysql-datasource-spring-boot-starter" target="_blank" rel="noopener noreferrer">点击查看最新新版本<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.purgeteam&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-datasource-spring-boot-starter&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div><h3 id="_1-配置模板"><a href="#_1-配置模板" class="header-anchor">#</a> 1 配置模板</h3> <p>我们先按照原有的方式配置mysql数据源配置。</p> <div class="language- extra-class"><pre class="language-text"><code>config.mysql.name=user
+config.mysql.hosturl=127.0.0.1:3306
+
+# mysql
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://${config.mysql.hosturl}/${config.mysql.name}?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;autoReconnect=true
+spring.datasource.jdbc-url=${spring.datasource.url}
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.filters=stat
+spring.datasource.maxActive=20
+spring.datasource.initialSize=1
+spring.datasource.maxWait=60000
+spring.datasource.minIdle=1
+spring.datasource.timeBetweenEvictionRunsMillis=60000
+spring.datasource.minEvictableIdleTimeMillis=300000
+spring.datasource.validationQuery=select 'x'
+spring.datasource.testWhileIdle=true
+spring.datasource.testOnBorrow=false
+spring.datasource.testOnReturn=false
+spring.datasource.poolPreparedStatements=true
+spring.datasource.maxOpenPreparedStatements=20
+</code></pre></div><p><code>config.mysql.name</code> 为数据库名称, 为下面代码注入做准备。</p> <h3 id="_2-数据库名结合模板配置"><a href="#_2-数据库名结合模板配置" class="header-anchor">#</a> 2 数据库名结合模板配置</h3> <p>通过 <code>DataSourceFactory#createDataSource</code> 方法可以将指定数据库注入。模板配置为之前的配置, 数据库名称通过 <code>${config.mysql.name}</code> 进行替换。</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 数据库名称替换方式生成 {@link DataSource}
+ * @author purgeyao
+ * @since 1.0
+ */
+@Configuration
+public class OneDataSourceConfiguration {
+
+    ...
+
+    /**
+     * DataSourceFactory#createDataSource 方式加载 one_mysql 数据库
+     * @param dataSourceFactory dataSourceFactory
+     * @return {@link DataSource}
+     */
+    @Primary
+    @Bean
+    public DataSource oneDataSource(DataSourceFactory dataSourceFactory) {
+        return dataSourceFactory.createDataSource(&quot;one_mysql&quot;);
+    }
+
+}
+</code></pre></div><p>这样可以把名为 <code>one_mysql</code> 数据库数据源进行加载。</p> <h3 id="_2-数据库信息结合配置模板"><a href="#_2-数据库信息结合配置模板" class="header-anchor">#</a> 2 数据库信息结合配置模板</h3> <p>当然只有上面方式只适合数据库地址密码一致的情况下,库名不一致,注入多数据源。</p> <p>下面方式支持数据库信息不一致情况下使用模板注入多数据源。</p> <p>需要先配置 mysql (1 配置模板),另行加下下面配置。</p> <p><strong>配置:</strong></p> <p><code>config.datasource.mysql.source-info-map</code> 包含 4 个信息 <code>host-url数据库地址</code> 、 <code>name数据库名称</code>、<code>username数据库用户名</code>、 <code>password数据库密码</code>。</p> <p><code>config.datasource.mysql.source-info-map.tow_mysql</code> 里的 <code>tow_mysql</code> 为 map 集合的 key。</p> <div class="language- extra-class"><pre class="language-text"><code># mysql-datasource-spring-boot-starter
+config.datasource.mysql.source-info-map.tow_mysql.host-url=127.0.0.1:3306
+config.datasource.mysql.source-info-map.tow_mysql.name=tow_mysql
+config.datasource.mysql.source-info-map.tow_mysql.username=root
+config.datasource.mysql.source-info-map.tow_mysql.password=root
+</code></pre></div><p><strong>代码:</strong></p> <p>先在 <code>DataSourceConfigProperties</code> 对象里获取相应 <code>SourceInfoMap</code> 配置。</p> <p>将 <code>DataSourceConfigProperties.SourceInfo towMysq</code> 配置通过 <code>DataSourceFactory#createDataSource</code> 方法进行创建即可。</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * {@link DataSourceConfigProperties} 配置方式生成 {@link DataSource}
+ *
+ * @author purgeyao
+ * @since 1.0
+ */
+@Configuration
+public class TowDataSourceConfiguration {
+
+    /**
+     * DataSourceFactory#createDataSource 方式加载 tow_mysql 数据库
+     *
+     * @param dataSourceFactory dataSourceFactory
+     * @return {@link DataSource}
+     */
+    @Bean
+    public DataSource towDataSource(DataSourceFactory dataSourceFactory, DataSourceConfigProperties properties) {
+        DataSourceConfigProperties.SourceInfo towMysql = properties.getSourceInfoMap().get(&quot;tow_mysql&quot;);
+        if (towMysql == null) {
+            throw new IllegalArgumentException(&quot;未获取到相应配置&quot;);
+        }
+        return dataSourceFactory.createDataSource(towMysql);
+    }
+
+}
+</code></pre></div><h3 id="_4-注解选择器结合模板配置-推荐写法"><a href="#_4-注解选择器结合模板配置-推荐写法" class="header-anchor">#</a> 4 注解选择器结合模板配置(推荐写法)</h3> <p><code>@DataSourceSelector</code> 注解可以使用配置模板生成相应数据源对象。</p> <p><code>DataSourceSelector#value</code> 为数据库配置key(详情2的配置), 其他写法和原有的数据库创建方法一致。</p> <p>只是把原有的 <code>@ConfigurationProperties(prefix = &quot;spring.datasource.onemysql&quot;)</code> 替换为 <code>@DataSourceSelector(&quot;tow_mysql&quot;)</code></p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 注解方式注入 {@link DataSource}
+ *
+ * @author purgeyao
+ * @since 1.0
+ */
+@Configuration
+public class AnnotationsDataSourceConfiguration {
+
+    ...
+
+    /**
+     * {@link DataSourceSelector} 方式选择注入 {@link DataSource}
+     *
+     * @return {@link DataSource}
+     */
+    @DataSourceSelector(&quot;tow_mysql&quot;)
+    public DataSource selectorDataSource() {
+        return DataSourceBuilder.create().build();
+    }
+}
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p><code>@DataSourceSelector(&quot;tow_mysql&quot;)</code> 方式推荐使用。和之前的方法基本无差别, 简单方便点。</p> <p>mysql 配置文件分开之后方便之后多个服务使用。</p> <blockquote><p>qq交流群: <code>812321371</code>
+微信交流群: <code>MercyYao</code></p></blockquote> <blockquote><p>示例代码地址:<a href="https://github.com/purgeteam/data-source-spring-boot" target="_blank" rel="noopener noreferrer">data-source-spring-boot<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <blockquote><p>作者GitHub:
+<a href="https://github.com/purgeyao" target="_blank" rel="noopener noreferrer">Purgeyao<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 欢迎关注</p></blockquote></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/purgeteam/purgeteam-docs/edit/master/docs/guide/old/data-source-spring-boot/README.md" target="_blank" rel="noopener noreferrer">帮助我们改善此文档！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/old/dynamic-config-spring-boot/" class="prev">
+        动态配置监听
+      </a></span> <span class="next"><a href="/guide/old/log-trace-spring-boot/">
+        日志链路追踪
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d7c9d3d.js" defer></script><script src="/assets/js/2.1de14bcc.js" defer></script><script src="/assets/js/11.b5313f69.js" defer></script>
+  </body>
+</html>
